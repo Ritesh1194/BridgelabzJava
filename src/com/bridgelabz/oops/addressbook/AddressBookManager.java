@@ -13,14 +13,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.json.simple.JSONObject;
-
 import utility.Oops;
 import utility.Utility;
 
 public class AddressBookManager {
-	private static String book;
+	private static String book1;
 	private static String BookName;
 	private AddressBook addressBook = null;
 	private static List<Person> listOfPersons = new ArrayList<Person>();
@@ -31,7 +28,7 @@ public class AddressBookManager {
 	 * @return String
 	 */
 	public static String getBookName() {
-		return "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/" + book;
+		return "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/" + book1;
 	}
 
 	/**
@@ -67,8 +64,7 @@ public class AddressBookManager {
 	 * @throws IOException
 	 */
 	public void openBook() throws IOException {
-		System.out.println("Files availab\n"
-				+ "		JSONArray updatedArray = new JSONArray(); // new array with updated elementsle are:");
+		System.out.println("Files available \n");
 		File[] arrayOfFiles = getFiles();
 
 		for (File file : arrayOfFiles) {
@@ -77,11 +73,11 @@ public class AddressBookManager {
 		}
 
 		System.out.println("Choose the address book");
-		book = Utility.inputString();
+		book1 = Utility.inputString();
 
 		for (File file : arrayOfFiles) {
 			String filename = file.getName();
-			if (book.equals(filename)) {
+			if (book1.equals(filename)) {
 				if (file.length() > 0) {
 					System.out.println("Address book is not empty");
 
@@ -89,11 +85,11 @@ public class AddressBookManager {
 					listOfPersons = Oops.userReadValue(string, AddressBook.class);
 					addressBook();
 
-				} else {
-					System.out.println("Address Book is empty");
-					System.out.println("Add new data onto the Address Book");
-					addressBook();
 				}
+			} else {
+				System.out.println("Address Book is empty");
+				System.out.println("Add new data onto the Address Book");
+				addressBook();
 			}
 		}
 	}
@@ -126,7 +122,7 @@ public class AddressBookManager {
 		if (file.createNewFile()) {
 			System.out.println("File is created");
 			String json = Oops.userWriteValueAsString(listOfPersons);
-			Oops.writeFile(json, book);
+			Oops.writeFile(json, book1);
 			System.out.println("Address book details saved");
 		} else {
 			System.out.println("File of that name already exists");

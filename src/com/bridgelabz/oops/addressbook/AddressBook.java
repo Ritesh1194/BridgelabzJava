@@ -1,6 +1,5 @@
 package com.bridgelabz.oops.addressbook;
 
-import java.io.IOException;
 /******************************************************************************
  * 
  * 1. Purpose : Address Book Problem
@@ -10,6 +9,7 @@ import java.io.IOException;
  * @since : 02-12-2019
  *
  ******************************************************************************/
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -61,7 +61,7 @@ public class AddressBook {
 		object1.put("Zip Code", address.getZipcode());
 
 		listOfPersons.add(person);
-		System.out.println("Person Added");
+		System.out.println("Person Added Successfully");
 		Oops.writeFile1(object1, AddressBookManager.getBookName());
 	}
 
@@ -89,8 +89,8 @@ public class AddressBook {
 	}
 
 	/**
-	 * Function to edit the details of the specified person in a particular address
-	 * book
+	 * Function to edit the details of the specified perso buyOrSellStock(file);n in
+	 * a particular address book
 	 */
 	public void editPerson() {
 		System.out.println("Enter the details of the person whose information needs to be modified");

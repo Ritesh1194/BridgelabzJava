@@ -35,14 +35,14 @@ public class Oops {
 	 * @return String
 	 */
 	public static String readJsonFile(String filename) throws IOException {
-		FileReader fr = new FileReader(filename);
-		BufferedReader br = new BufferedReader(fr);
+		FileReader fileReader = new FileReader(filename);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		String str = "";
 		String line = "";
-		while ((line = br.readLine()) != null) {
+		while ((line = bufferedReader.readLine()) != null) {
 			str += line;
 		}
-		br.close();
+		bufferedReader.close();
 		return str;
 	}
 
