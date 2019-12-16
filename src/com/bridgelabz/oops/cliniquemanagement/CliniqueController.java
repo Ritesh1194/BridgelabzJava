@@ -1,4 +1,5 @@
 package com.bridgelabz.oops.cliniquemanagement;
+
 /******************************************************************************
  * 
  * Purpose: This programme is used to manage a list of Doctors associated with
@@ -58,6 +59,11 @@ public class CliniqueController {
 		}
 	}
 
+	/**
+	 * Define static function doctorInput()
+	 * 
+	 * @return void
+	 */
 	private static void doctorInput() {
 		System.out.println("Search doctor by:");
 		System.out.println("1. Name");
@@ -73,6 +79,13 @@ public class CliniqueController {
 		}
 	}
 
+	/**
+	 * Define static function doctorChoice()
+	 * 
+	 * @param choice
+	 *            ->String
+	 * @return void
+	 */
 	public static void doctorChoice(String choice) {
 		switch (choice) {
 		case "1":
@@ -97,6 +110,11 @@ public class CliniqueController {
 		}
 	}
 
+	/**
+	 * Define static function patientInput()
+	 * 
+	 * @return void
+	 */
 	private static void patientInput() {
 		System.out.println("Search patient by:");
 		System.out.println("1. Name");
@@ -110,6 +128,14 @@ public class CliniqueController {
 			doctorInput();
 		}
 	}
+
+	/**
+	 * Define static function patientChoice()
+	 * 
+	 * @param choice
+	 *            ->String
+	 * @return void
+	 */
 
 	private static void patientChoice(String choice) {
 		switch (choice) {

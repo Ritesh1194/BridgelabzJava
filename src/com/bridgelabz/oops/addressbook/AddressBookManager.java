@@ -67,7 +67,8 @@ public class AddressBookManager {
 	 * @throws IOException
 	 */
 	public void openBook() throws IOException {
-		System.out.println("Files available are:");
+		System.out.println("Files availab\n"
+				+ "		JSONArray updatedArray = new JSONArray(); // new array with updated elementsle are:");
 		File[] arrayOfFiles = getFiles();
 
 		for (File file : arrayOfFiles) {

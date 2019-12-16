@@ -1,4 +1,5 @@
 package com.bridgelabz.oops.cliniquemanagement;
+
 /******************************************************************************
  * 
  * Purpose: This programme is used to manage a list of Doctors associated with
@@ -31,6 +32,11 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 	static String patient = "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/Patient.json";
 	static String appointment = "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/appointment.json";
 
+	/**
+	 * Define function doctorDetails()
+	 * 
+	 * @return void
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void doctorDetails() {
@@ -72,7 +78,17 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 
 	}
 
-	/** Reads doctor's data from json file **/
+	/**
+	 * Define function readDoctorData(). Reads doctor's data from json file
+	 * 
+	 * @param key
+	 *            --> String
+	 * @param value
+	 *            --> String
+	 * @param choice
+	 *            -->String
+	 * @return void
+	 */
 	@Override
 	public void readDoctorData(String key, String value, String choice) {
 
@@ -104,12 +120,29 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 				} else {
 					CliniqueController.menu();
 				}
-			}
+			} /**
+				 * Define static function readDoctorData(). Reads doctor's data from json file
+				 * 
+				 * @param key
+				 *            --> String
+				 * @param value
+				 *            --> String
+				 * @param choice
+				 *            -->String
+				 * @return void
+				 */
 		}
 		System.out.println("Enter valid Doctor " + key);
 		CliniqueController.doctorChoice(choice);
 	}
 
+	/**
+	 * Define function makeAppointment()
+	 * 
+	 * @param JSONObjcet
+	 *            -> doctorJsonObject
+	 * @return void
+	 */
 	@SuppressWarnings("unchecked")
 	private void makeAppointment(JSONObject doctorJsonObject) {
 		String patientId = "";
@@ -117,16 +150,13 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		long patients = (long) doctorJsonObject.get("Patients");
 		if (patients >= 5) { // doctor is busy
 			System.out.println("Sorry!!! Doctor is busy today. Do you want to take an appointment tomorrow[y/n]");
-			// current date
 			LocalDate today = LocalDate.now();
 
 			// adding one day to the localdate
 			LocalDate tomorrow = today.plusDays(1);
 			DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-
 			String date = tomorrow.format(format);
 
-			// System.out.println("Tomorrow's Date: "+dateTime);
 			String response = Utility.inputString().toString();
 			if (response.equals("y")) {
 				int count = 0;
@@ -142,8 +172,6 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		else {
 			// will give us the current time and date
 			LocalDateTime current = LocalDateTime.now();
-
-			// to print in a particular format
 			DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
 			String date = current.format(format);
@@ -157,19 +185,28 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 			System.out.println("Congratulation You got an appointment. Your Patient ID is " + patientId + "\n");
 			CliniqueController.menu();
 		}
-
 	}
+
+	/**
+	 * Define function appointment()
+	 * 
+	 * @param patientId
+	 *            --> String
+	 * @param doctorId
+	 *            --> String
+	 * @param date
+	 *            -->String
+	 * @return void
+	 */
 
 	@SuppressWarnings("unchecked")
 	private void appointment(String patientId, String doctorId, String date) {
-
 		JSONArray jsonArray = CliniqueRepository.readData(appointment);
 		JSONObject jsonObject = new JSONObject();
 
 		jsonObject.put("DoctorId", doctorId);
 		jsonObject.put("PatientId", patientId);
 		jsonObject.put("AppointmentDate", date);
-		// jsonObject.put("Total Patient", count++);
 
 		jsonArray.add(jsonObject);
 
@@ -186,8 +223,6 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 
 		JSONArray updatedArray = new JSONArray(); // new array with updated elements
 		Iterator iterator = jsonArray.iterator();
-
-		// iterates over array
 		while (iterator.hasNext()) {
 			JSONObject object = (JSONObject) iterator.next();
 			if (object.get("Id").equals(doctorJsonObject.get("Id"))) {
@@ -201,6 +236,15 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 
 	}
 
+	/**
+	 * Define function patientDetailsNew()
+	 * 
+	 * @param patientId
+	 *            --> String
+	 * @param doctorId
+	 *            --> String
+	 * @return void
+	 */
 	@SuppressWarnings("unchecked")
 	public void patientDetailsNew(String patientId, String doctorId) {
 
@@ -215,6 +259,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 
 		System.out.println("Enter Mobile Number");
 		String mobile = Utility.inputString();
+
 		if (Utility.mobileNumberValidator(mobile)) {
 			System.out.println("Mobile :" + mobile);
 			patientDetails.setMobile(Long.parseLong(mobile));
@@ -223,7 +268,6 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		System.out.println("Enter Age");
 		int age = Utility.inputinteger();
 		patientDetails.setAge(age);
-
 		patientDetails.setId(patientId);
 
 		jsonObject.put("Id", patientDetails.getId());
@@ -233,10 +277,18 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		jsonObject.put("Doctor Id", doctorId);
 
 		jsonArray.add(jsonObject);
-		// System.out.println(jsonArray);
 		CliniqueRepository.writeData(patient, jsonArray);
 	}
 
+	/**
+	 * Define function readPatientData()
+	 * 
+	 * @param key
+	 *            --> String
+	 * @param value
+	 *            --> String
+	 * @return void
+	 */
 	@Override
 	public void readPatientData(String key, String value) {
 		jsonArray = CliniqueRepository.readData(patient);
