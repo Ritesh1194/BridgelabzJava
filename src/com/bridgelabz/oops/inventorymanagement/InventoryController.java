@@ -1,4 +1,5 @@
 package com.bridgelabz.oops.inventorymanagement;
+
 /******************************************************************************
  * 
  * Purpose: Create a JSON file having Inventory Details for Rice, Pulses and
@@ -16,9 +17,9 @@ public class InventoryController {
 		InventoryI details = new InventoryImpl();
 
 		System.out.println("Enter your choice");
-		System.out.println("1. Add Inventory");
-		System.out.println("2. Inventory List");
-		System.out.println("3. Calculation");
+		System.out.println("1. Add Inventory : ");
+		System.out.println("2. Inventory List : ");
+		System.out.println("3. Calculation : ");
 		int option = Utility.inputInteger();
 		if (Utility.validOption(option)) {
 			switch (option) {

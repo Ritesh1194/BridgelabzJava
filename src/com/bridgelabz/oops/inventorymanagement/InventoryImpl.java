@@ -56,7 +56,7 @@ public class InventoryImpl implements InventoryI {
 		switch (selectedOption) {
 		case 1:
 
-			System.out.println("Enter how many types of Rice you want to add");
+			System.out.println("Enter How Many Types Of Rice You want To Add");
 			count = Utility.inputInteger();
 
 			jsonArray = (JSONArray) json.get("Rice");
@@ -66,7 +66,7 @@ public class InventoryImpl implements InventoryI {
 			}
 			break;
 		case 2:
-			System.out.println("Enter how many types of Wheat you want to add");
+			System.out.println("Enter How Many Types Of Wheat You want To Add");
 			count = Utility.inputInteger();
 			jsonArray = (JSONArray) json.get("Wheat");
 			while (count > 0) {
@@ -75,7 +75,7 @@ public class InventoryImpl implements InventoryI {
 			}
 			break;
 		case 3:
-			System.out.println("Enter how many types of Pulses you want to add");
+			System.out.println("Enter How Many Types Of Pulses You want To Add");
 			count = Utility.inputInteger();
 			jsonArray = (JSONArray) json.get("Pulses");
 			while (count > 0) {
@@ -100,7 +100,7 @@ public class InventoryImpl implements InventoryI {
 	@SuppressWarnings("unchecked")
 	private JSONObject userinput() {
 		JSONObject jsonObject = new JSONObject();
-		System.out.println("Enter name, weight and priceperkg");
+		System.out.println("Enter Name , Weight and PricePerKg : ");
 
 		inv.setName(Utility.inputString());
 		inv.setWeight(Utility.inputDouble());
