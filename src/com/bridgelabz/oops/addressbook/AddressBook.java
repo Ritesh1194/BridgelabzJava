@@ -40,28 +40,28 @@ public class AddressBook {
 	public void addPerson() throws IOException {
 		Person person = new Person();
 
-		System.out.println("Enter first name");
+		System.out.println("Enter First Name : ");
 		person.setFirstName(Utility.inputString());
-		object1.put("firstName", person.getFirstName());
+		object1.put("firstName ", person.getFirstName());
 
-		System.out.println("Enter last name");
+		System.out.println("Enter Last Name : ");
 		person.setLastName(Utility.inputString());
-		object1.put("lastName", person.getLastName());
+		object1.put("lastName ", person.getLastName());
 
-		System.out.println("Enter contact number");
+		System.out.println("Enter Contact Number : ");
 		person.setContactNo(Utility.inputLong());
-		object1.put("Contact Number", person.getContactNo());
+		object1.put("Contact Number ", person.getContactNo());
 
 		person.setAddress(addressDetails());
 
 		Address address = person.getAddress();
-		object1.put("Street", address.getStreet());
-		object1.put("City", address.getCity());
-		object1.put("State", address.getState());
-		object1.put("Zip Code", address.getZipcode());
+		object1.put("Street ", address.getStreet());
+		object1.put("City ", address.getCity());
+		object1.put("State ", address.getState());
+		object1.put("Zip Code ", address.getZipcode());
 
 		listOfPersons.add(person);
-		System.out.println("Person Added Successfully");
+		System.out.println(" Person Added Successfully ");
 		Oops.writeFile1(object1, AddressBookManager.getBookName());
 	}
 
@@ -73,16 +73,16 @@ public class AddressBook {
 	public Address addressDetails() {
 		Address address = new Address();
 
-		System.out.println("Enter street");
+		System.out.println("Enter street : ");
 		address.setStreet(Utility.inputString());
 
-		System.out.println("Enter city");
+		System.out.println("Enter city : ");
 		address.setCity(Utility.inputString());
 
-		System.out.println("Enter state");
+		System.out.println("Enter state :");
 		address.setState(Utility.inputString());
 
-		System.out.println("Enter zipcode");
+		System.out.println("Enter zipcode : ");
 		address.setZipcode(Utility.inputLong());
 
 		return address;
@@ -94,10 +94,10 @@ public class AddressBook {
 	 */
 	public void editPerson() {
 		System.out.println("Enter the details of the person whose information needs to be modified");
-		System.out.println("Enter first name");
+		System.out.println("Enter First Name : ");
 		String firstName = Utility.inputString();
 
-		System.out.println("Enter last name");
+		System.out.println("Enter Last Name : ");
 		String lastName = Utility.inputString();
 
 		Optional<Person> optional = listOfPersons.parallelStream()
@@ -120,14 +120,14 @@ public class AddressBook {
 		do {
 			System.out.println("Enter the choice you want modify");
 
-			System.out.println("1. Contact Number  2.Address");
+			System.out.println(" 1. Contact Number  2. Address");
 			int choice = Utility.inputInteger();
 			switch (choice) {
 			case 1:
-				System.out.println("Enter the new contact number");
+				System.out.println("Enter the new contact number : ");
 				long newContact = Utility.inputLong();
 				per.setContactNo(newContact);
-				System.out.println("Your contact number is updated");
+				System.out.println("Your contact number is updated ");
 				break;
 			case 2:
 				Address address = per.getAddress();
@@ -149,33 +149,33 @@ public class AddressBook {
 	 */
 	public void addressUpdate(Address address) {
 		do {
-			System.out.println("Enter the details of address you want to change");
-			System.out.println("1:Street  2:City  3:State  4:Zipcode");
+			System.out.println(" Enter the details of address you want to change ");
+			System.out.println("1. Street  2. City  3. State  4. Zipcode");
 			int ch = Utility.inputInteger();
 			switch (ch) {
 			case 1:
-				System.out.println("Enter the street");
+				System.out.println("Enter the Street ");
 				String newStreet = Utility.inputString();
 				address.setStreet(newStreet);
-				System.out.println("Your street is updated");
+				System.out.println("Your Street is updated");
 				break;
 			case 2:
-				System.out.println("Enter the city");
+				System.out.println("Enter The City");
 				String newCity = Utility.inputString();
 				address.setCity(newCity);
 				System.out.println("Your city is updated");
 				break;
 			case 3:
-				System.out.println("Enter the state");
+				System.out.println("Enter The State");
 				String newState = Utility.inputString();
 				address.setState(newState);
 				System.out.println("Your state is updated");
 				break;
 			case 4:
-				System.out.println("Enter the zipcode");
+				System.out.println("Enter The Zipcode");
 				long newZip = Utility.inputLong();
 				address.setZipcode(newZip);
-				System.out.println("Your zip code has been updated");
+				System.out.println("Your zip code has been updated ");
 				break;
 			default:
 				System.out.println("Invalid choice");
@@ -208,9 +208,9 @@ public class AddressBook {
 	 */
 	public void deletePerson() {
 		System.out.println("Enter the details of person to delete");
-		System.out.println("Enter first name");
+		System.out.println("Enter First Name : ");
 		String firstName = Utility.inputString();
-		System.out.println("Enter last name");
+		System.out.println("Enter Last Name  : ");
 		String lastName = Utility.inputString();
 
 		if (!listOfPersons.isEmpty()) {

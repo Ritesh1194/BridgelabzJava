@@ -187,7 +187,7 @@ public class AddressBookManager {
 	 */
 	public void sort() {
 		System.out.println("Enter your choice");
-		System.out.println("1:Sort by Last Name  2:Sort by Zip Code");
+		System.out.println("1. Sort by Last Name  2. Sort by Zip Code");
 		int ch = Utility.inputInteger();
 		switch (ch) {
 		case 1:
