@@ -8,7 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 public class StockAccountManagementImpl implements StockAccountInterface {
-	String path = "G:\\Ritesh\\Bridgelabz-master\\src\\JsonFolder\\CompanyList.json";
+	String path = "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/CompanyList.json";
 	File fileRead = new File(path);
 	MyStack<String> transactionStack;
 	MyQueue<String> transactionQueue;
@@ -19,6 +19,15 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		transactionQueue = new MyQueue<>();
 	}
 
+	/**
+	 * Define function addCompanyDetails()
+	 * 
+	 * @param file
+	 *            --> File
+	 * @param companyDetails
+	 *            --> CompanyShare
+	 * @return void
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void addCompanyDetails(File file, CompanyShare companyDetails) {
@@ -42,9 +51,19 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 	@Override
 	public void printReport() {
 		// TODO Auto-generated method stub
-
 	}
 
+	/**
+	 * Define function buyShare()
+	 * 
+	 * @param ammount
+	 *            --> double
+	 * @param symbol
+	 *            --> String
+	 * @param fileWrite
+	 *            --> File
+	 * @return void
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void buyShare(double amount, String symbol, File fileWrite) {
@@ -67,9 +86,8 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 			System.out.println("Share :" + numberOfShare);
 
 			array = updateCompanyDetails(jsonArray, numberOfShare);
+
 			LocalDateTime current = LocalDateTime.now();
-			// System.out.println("current date and time : "+ current);
-			// to print in a particular format
 			DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
 			String dateTime = current.format(format);
@@ -91,8 +109,17 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		} else {
 			System.out.println("The Stock you are trying to purchase is not available in Stock Market");
 		}
-
 	}
+
+	/**
+	 * Define JSONArray function updateCompanyDetails()
+	 * 
+	 * @param jsonArray
+	 *            --> JSONArray
+	 * @param numberOfShare
+	 *            --> int
+	 * @return JSONArray
+	 */
 
 	private JSONArray updateCompanyDetails(JSONArray jsonArray, int numberOfShare) {
 		long updatedShare = 0;
@@ -112,6 +139,17 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		return jsonArray;
 	}
 
+	/**
+	 * Define function sellShare()
+	 * 
+	 * @param ammount
+	 *            --> double
+	 * @param symbol
+	 *            --> String
+	 * @param file2
+	 *            --> File
+	 * @return void
+	 */
 	@Override
 	public void sellShare(double amount, String symbol, File file2) {
 		double price = 0;
@@ -138,6 +176,15 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		}
 	}
 
+	/**
+	 * Define JSONObject function updateAccountDetails()
+	 * 
+	 * @param accountJson
+	 *            --> JSONObject
+	 * @param numberOfShare
+	 *            --> int
+	 * @return JSONObject
+	 */
 	private JSONObject updateAccountDetails(JSONObject accountJson, int numberOfShare) {
 		long share = (long) accountJson.get("PurchaseShare");
 		long updatedShare = 0;
@@ -145,8 +192,8 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		if (share > numberOfShare) {
 			updatedShare = share - numberOfShare;
 			accountJson.put("SoldShare", updatedShare);
+
 			LocalDateTime current = LocalDateTime.now();
-			// to print in a particular format
 			DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 
 			dateTime = current.format(format);
@@ -156,9 +203,7 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		} else {
 			System.out.println("You are trying to sell Over limit you habve only " + share + " share");
 		}
-
 		accountJson.put("SoldTime", dateTime);
-
 		return accountJson;
 	}
 
@@ -167,12 +212,16 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 		// JSONArray jsonArray = StockAccountRepository.readArrayData(file)
 	}
 
+	/**
+	 * Define function printTranctiondetails()
+	 * 
+	 * @return void
+	 */
 	@Override
 	public void printTransactionDetails() {
 		/**
 		 * prints queue
 		 */
-
 		System.out.println("\nTransactions Queue:");
 		while (!transactionQueue.isEmpty()) {
 			System.out.println(transactionQueue.dequeue());

@@ -15,6 +15,11 @@ public class StockAccount {
 		menu();
 	}
 
+	/**
+	 * Define static function menu()
+	 * 
+	 * @return void
+	 */
 	public static void menu() {
 		System.out.println("Select following option ");
 		System.out.println("1. Add Company Details");
@@ -50,6 +55,14 @@ public class StockAccount {
 		}
 	}
 
+	/**
+	 * Define static function createAccount()
+	 * 
+	 * @param fileName
+	 *            --> String
+	 * @return void
+	 */
+
 	private static void createAccount(String fileName) {
 
 		file = new File("/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/" + fileName + ".json");
@@ -68,6 +81,13 @@ public class StockAccount {
 		buyOrSellStock(file);
 	}
 
+	/**
+	 * Define static function buyOrSellStock()
+	 * 
+	 * @param file2
+	 *            --> File
+	 * @return void
+	 */
 	public static void buyOrSellStock(File file2) {
 		System.out.println("1. Buy Some Share");
 		System.out.println("2. Sell some Share");
