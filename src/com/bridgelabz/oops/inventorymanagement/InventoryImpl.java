@@ -1,4 +1,5 @@
 package com.bridgelabz.oops.inventorymanagement;
+
 /******************************************************************************
  * 
  * Purpose: Create a JSON file having Inventory Details for Rice, Pulses and
@@ -38,6 +39,14 @@ public class InventoryImpl implements InventoryI {
 		}
 		return value;
 	}
+
+	/**
+	 * Define Function writeData()
+	 * 
+	 * @param selectedOption
+	 *            ->int
+	 * @return void
+	 */
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -83,6 +92,11 @@ public class InventoryImpl implements InventoryI {
 		InventoryRepository.writeData(jsonFinalObject);
 	}
 
+	/**
+	 * Define function userInput()
+	 * 
+	 * @returns value of given JSONObject format
+	 */
 	@SuppressWarnings("unchecked")
 	private JSONObject userinput() {
 		JSONObject jsonObject = new JSONObject();
@@ -99,11 +113,24 @@ public class InventoryImpl implements InventoryI {
 		return jsonObject;
 	}
 
+	/**
+	 * Define Function inventoryList()
+	 *
+	 * @return void
+	 */
 	@Override
 	public void inventryList() {
 		jsonFinalObject = InventoryRepository.readData();
 		System.out.println(jsonFinalObject);
 	}
+
+	/**
+	 * Define Function calculation()
+	 * 
+	 * @param selected
+	 *            ->int
+	 * @return void
+	 */
 
 	@Override
 	public void calculation(int selected) {

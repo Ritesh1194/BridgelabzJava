@@ -294,7 +294,15 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		jsonArray = CliniqueRepository.readData(patient);
 		Iterator iterator = jsonArray.iterator();
 		JSONObject jsonObject;
-		while (iterator.hasNext()) {
+		while (iterator.hasNext()) {/**
+									 * Define function patientDetailsNew()
+									 * 
+									 * @param patientId
+									 *            --> String
+									 * @param doctorId
+									 *            --> String
+									 * @return void
+									 */
 			if ((jsonObject = (JSONObject) iterator.next()).containsValue(value)) {
 				System.out.println("\nPatient Information:");
 				System.out.println("ID: " + jsonObject.get("Id") + "\t");
