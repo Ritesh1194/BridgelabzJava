@@ -17,6 +17,9 @@ public class Utility {
 		return sc.nextInt();
 	}
 
+	public static long inputLong() {
+		return sc.nextLong();
+	}
 	/*
 	 * returns InputDouble
 	 */
@@ -42,24 +45,14 @@ public class Utility {
 	 * Return Input String
 	 */
 	public static String inputStringLine() {
-		try {
-			return sc.nextLine();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return null;
+		return sc.nextLine();
 	}
 
 	/*
 	 * Return Input Boolean
 	 */
 	public static boolean inputBoolean() {
-		try {
-			return sc.nextBoolean();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return false;
+		return sc.nextBoolean();
 	}
 
 	/*
@@ -190,41 +183,10 @@ public class Utility {
 		return false;
 	}
 
-	/*
-	 * METHOD TO QUIT
-	 */
-	public static void quit() {
-		System.exit(0);
-	}
+	
 
 	public static boolean isStringOnlyAlphabet(String str) {
 		return ((str != null) && (!str.equals("")) && (str.matches("^[a-zA-Z]*$")));
-	}
-
-	public static int inputinteger() {
-		try {
-			return sc.nextInt();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return 0;
-	}
-
-	public static long inputLong() {
-		try {
-			return sc.nextLong();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
-		return 0;
-	}
-
-	public static void scannerClose() {
-		try {
-			sc.close();
-		} catch (Exception e) {
-			System.out.println(e);
-		}
 	}
 
 	public static boolean intChecker(String number) {
@@ -241,6 +203,11 @@ public class Utility {
 			return true;
 
 		return false;
-
+	}
+	/*
+	 * METHOD TO QUIT
+	 */
+	public static void quit() {
+		System.exit(0);
 	}
 }

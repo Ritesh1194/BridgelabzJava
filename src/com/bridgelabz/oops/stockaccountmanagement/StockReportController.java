@@ -1,5 +1,12 @@
 package com.bridgelabz.oops.stockaccountmanagement;
 
+/** StockAccount.java implements a data type that might be used by a financial institution to keep track of customer information. The StockAccount class implements following methods
+The StockAccount class also maintains a list of CompanyShares object which has Stock Symbol and Number of Shares as well as DateTime of the transaction. When buy or sell is initiated StockAccount checks if CompanyShares are available and accordingly update or create an Object.
+ * @author : Ritesh Yadav
+ * @version : 1.0
+ * @since : 15-12-2019
+ *
+ ******************************************************************************/
 import utility.Utility;
 
 public class StockReportController {
@@ -21,18 +28,17 @@ public class StockReportController {
 	 */
 	static void getStockData() {
 		System.out.println("Enter number of stocks: ");
-		int count = Utility.inputinteger();
+		int count = Utility.inputInteger();
 		list = new MyLinkedList<StockPortfolio>();
 
 		for (int i = 0; i < count; i++) {
 			System.out.println("Enter stock name, number of shares and share price: ");
 			String name = Utility.inputString();
-			int numberOfShares = Utility.inputinteger();
-			int price = Utility.inputinteger();
+			int numberOfShares = Utility.inputInteger();
+			int price = Utility.inputInteger();
 			StockPortfolio stock = new StockPortfolio(name, numberOfShares, price);
 			list.add(stock);
 		}
-		Utility.scannerClose();
 	}
 
 	/**

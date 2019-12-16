@@ -1,5 +1,12 @@
 package com.bridgelabz.oops.stockaccountmanagement;
 
+/** StockAccount.java implements a data type that might be used by a financial institution to keep track of customer information. The StockAccount class implements following methods
+The StockAccount class also maintains a list of CompanyShares object which has Stock Symbol and Number of Shares as well as DateTime of the transaction. When buy or sell is initiated StockAccount checks if CompanyShares are available and accordingly update or create an Object.
+ * @author : Ritesh Yadav
+ * @version : 1.0
+ * @since : 15-12-2019
+ *
+ ******************************************************************************/
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -64,7 +71,6 @@ public class StockAccount {
 	 */
 
 	private static void createAccount(String fileName) {
-
 		file = new File("/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/" + fileName + ".json");
 		try (FileWriter fileWriter = new FileWriter(file)) {
 			System.out.println(file + " Created Successfully !!!");

@@ -19,7 +19,7 @@ public class CompanyShareController {
 		String symbol = Utility.inputString();
 
 		System.out.println("Enter Number of Share");
-		int numberOfShare = Utility.inputinteger();
+		int numberOfShare = Utility.inputInteger();
 
 		System.out.println("Enter Price");
 		double price = Utility.inputDouble();

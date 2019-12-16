@@ -7,7 +7,7 @@ package com.bridgelabz.oops.inventorymanagement;
  ** 
  * @author : Ritesh Yadav
  * @version : 1.2
- * @since : 03-11-2019
+ * @since : 03-12-2019
  *
  ******************************************************************************/
 import java.util.Iterator;
@@ -67,7 +67,7 @@ public class InventoryImpl implements InventoryI {
 			break;
 		case 2:
 			System.out.println("Enter how many types of Wheat you want to add");
-			count = Utility.inputinteger();
+			count = Utility.inputInteger();
 			jsonArray = (JSONArray) json.get("Wheat");
 			while (count > 0) {
 				jsonArray.add(userinput());

@@ -266,7 +266,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		}
 
 		System.out.println("Enter Age");
-		int age = Utility.inputinteger();
+		int age = Utility.inputInteger();
 		patientDetails.setAge(age);
 		patientDetails.setId(patientId);
 
