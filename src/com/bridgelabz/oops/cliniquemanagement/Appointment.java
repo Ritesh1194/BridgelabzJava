@@ -18,10 +18,10 @@
 package com.bridgelabz.oops.cliniquemanagement;
 
 public class Appointment {
-	String doctorName;
 	int doctorId;
-	String patientName;
 	int patientId;
+	String doctorName;
+	String patientName;
 	String Availibility;
 	String patientPhone;
 
@@ -43,8 +43,6 @@ public class Appointment {
 		this.Availibility = Availibility;
 	}
 
-	
-	
 	public String getDoctorName() {
 		return doctorName;
 	}
@@ -56,8 +54,6 @@ public class Appointment {
 	public int getDoctorId() {
 		return doctorId;
 	}
-	
-	
 
 	public void setDoctorId(int doctorId) {
 		this.doctorId = doctorId;

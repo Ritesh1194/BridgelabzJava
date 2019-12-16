@@ -31,7 +31,6 @@ public class CliniqueRepository {
 	public static void writeData(String filePath, JSONArray jsonArray) {
 		try (FileWriter fileWriter = new FileWriter(filePath)) {
 			fileWriter.write(jsonArray.toJSONString());
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -46,7 +45,6 @@ public class CliniqueRepository {
 			JSONParser jsonParser = new JSONParser();
 			jsonArray = (JSONArray) jsonParser.parse(fileReader);
 			return jsonArray;
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

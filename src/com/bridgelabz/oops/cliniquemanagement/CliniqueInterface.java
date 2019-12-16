@@ -12,7 +12,7 @@ package com.bridgelabz.oops.cliniquemanagement;
  * @author Ritesh Yadav
  * @version 1.0
  * @since 02-12-2019
- *
+ *String doctorName;
  ******************************************************************************/
 public interface CliniqueInterface {
 

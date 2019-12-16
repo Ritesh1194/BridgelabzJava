@@ -44,19 +44,19 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		jsonArray = CliniqueRepository.readData(doctor);
 
 		Doctor doctorDetails = new Doctor();
-		System.out.println("Enter Doctor Name");
+		System.out.println("Enter Doctor Name : ");
 		String doctorName = Utility.inputString();
 		if (Utility.isStringOnlyAlphabet(doctorName)) {
 			doctorDetails.setDoctorName(doctorName);
 		}
 
-		System.out.println("Enter Doctor Specialization");
+		System.out.println("Enter Doctor Specialization : ");
 		String specialization = Utility.inputString();
 		if (Utility.isStringOnlyAlphabet(specialization)) {
 			doctorDetails.setSpecialization(specialization);
 		}
 
-		System.out.println("Enter Doctor Availability");
+		System.out.println("Enter Doctor Availability : ");
 		String availability = Utility.inputString();
 		if (Utility.isStringOnlyAlphabet(availability)) {
 			doctorDetails.setAvailability(availability);
@@ -105,7 +105,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 			// and if present prints it
 			if ((jsonObject = (JSONObject) iterator.next()).get(key).equals(value)) {
 				lastJasonObject = jsonObject;
-				System.out.println("\nDoctor Information:");
+				System.out.println("\nDoctor Information :");
 				System.out.println("ID: " + jsonObject.get("Id") + "\t");
 				System.out.println("Name: " + jsonObject.get("Name") + "\t");
 				System.out.println("Specialization: " + jsonObject.get("Specialization") + "\t");
@@ -113,7 +113,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 				System.out.println("Number of Patients: " + jsonObject.get("Patients") + "\n");
 
 				// asks user if want to take an appointment
-				System.out.println("Do you want to take an appointment?[y/n]");
+				System.out.println("Do you want to take an appointment?[y/n] ");
 				String response = Utility.inputString().toLowerCase();
 				if (response.equals("y")) {
 					makeAppointment(lastJasonObject);
@@ -121,7 +121,8 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 					CliniqueController.menu();
 				}
 			} /**
-				 * Define static function readDoctorData(). Reads doctor's data from json file
+				 * String doctorName; Define static function readDoctorData(). Reads doctor's
+				 * data from json file
 				 * 
 				 * @param key
 				 *            --> String
@@ -132,7 +133,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 				 * @return void
 				 */
 		}
-		System.out.println("Enter valid Doctor " + key);
+		System.out.println("Enter valid Doctor : " + key);
 		CliniqueController.doctorChoice(choice);
 	}
 
@@ -251,13 +252,13 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		JSONArray jsonArray = CliniqueRepository.readData(patient);
 
 		Patients patientDetails = new Patients();
-		System.out.println("Enter Patient Name");
+		System.out.println("Enter Patient Name : ");
 		String patientName = Utility.inputString();
 		if (Utility.isStringOnlyAlphabet(patientName)) {
 			patientDetails.setPatientName(patientName);
 		}
 
-		System.out.println("Enter Mobile Number");
+		System.out.println("Enter Mobile Number : ");
 		String mobile = Utility.inputString();
 
 		if (Utility.mobileNumberValidator(mobile)) {
@@ -265,7 +266,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 			patientDetails.setMobile(Long.parseLong(mobile));
 		}
 
-		System.out.println("Enter Age");
+		System.out.println("Enter Age : ");
 		int age = Utility.inputInteger();
 		patientDetails.setAge(age);
 		patientDetails.setId(patientId);
@@ -304,7 +305,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 									 * @return void
 									 */
 			if ((jsonObject = (JSONObject) iterator.next()).containsValue(value)) {
-				System.out.println("\nPatient Information:");
+				System.out.println("\nPatient Information :");
 				System.out.println("ID: " + jsonObject.get("Id") + "\t");
 				System.out.println("Name: " + jsonObject.get("Name") + "\t");
 				System.out.println("Mobile Number: " + jsonObject.get("Mobile") + "\t");
