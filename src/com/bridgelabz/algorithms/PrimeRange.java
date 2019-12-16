@@ -12,7 +12,6 @@ package com.bridgelabz.algorithms;
 import utility.Algorithms;
 
 public class PrimeRange {
-
 	public static void main(String[] args) {
 		Algorithms.primeNumber();
 	}

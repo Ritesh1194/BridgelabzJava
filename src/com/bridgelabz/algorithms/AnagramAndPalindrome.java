@@ -15,6 +15,5 @@ public class AnagramAndPalindrome {
 
 	public static void main(String[] args) {
 		Algorithms.primeAnagram();
-
 	}
 }

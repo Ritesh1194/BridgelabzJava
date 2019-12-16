@@ -65,6 +65,7 @@ public class AddressBook {
 
 		listOfPersons.add(person);
 		System.out.println("Person Added");
+		Oops.writeFile1(object1, AddressBookManager.getBookName());
 	}
 
 	/**

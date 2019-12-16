@@ -26,7 +26,7 @@ public class AddressBookManager {
 	private static List<Person> listOfPersons = new ArrayList<Person>();
 
 	public static String getBookName() {
-		return BookName;
+		return "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/" + book;
 	}
 
 	/**

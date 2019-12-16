@@ -14,7 +14,6 @@ import utility.Utility;
 
 public class PermutationsUsingItarative {
 	public static void main(String[] args) {
-
 		System.out.println("Enter String  ");
 		String str = Utility.inputString();
 		Algorithms.permutations(str);
