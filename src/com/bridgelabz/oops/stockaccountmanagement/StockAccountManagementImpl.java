@@ -205,7 +205,6 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 			dateTime = current.format(format);
 			transactionStack.push("Sold");
 			transactionQueue.enqueue(dateTime);
-
 		} else {
 			System.out.println("You are trying to sell Over limit you habve only " + share + " share");
 		}

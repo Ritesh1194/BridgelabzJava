@@ -6,7 +6,7 @@ The StockAccount class also maintains a list of CompanyShares object which has S
  * @version : 1.0
  * @since : 15-12-2019
  *
- ******************************************************************************/	
+ ******************************************************************************/
 import utility.Utility;
 
 public class StockReportController {
@@ -27,12 +27,12 @@ public class StockReportController {
 	 * @return-type: Doesn't return anything
 	 */
 	static void getStockData() {
-		System.out.println("Enter number of stocks: ");
+		System.out.println("Enter Number Of Stocks: ");
 		int count = Utility.inputInteger();
 		list = new MyLinkedList<StockPortfolio>();
 
 		for (int i = 0; i < count; i++) {
-			System.out.println("Enter stock name, number of shares and share price: ");
+			System.out.println("Enter Stock Name, Number Of Shares and Share Price: ");
 			String name = Utility.inputString();
 			int numberOfShares = Utility.inputInteger();
 			int price = Utility.inputInteger();

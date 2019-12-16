@@ -19,7 +19,6 @@ public class StockAccountRepository {
 		try (FileWriter fileWriter = new FileWriter(file)) {
 			fileWriter.write(baseJson.toJSONString());
 			System.out.println("Data added to the " + file);
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -30,7 +29,6 @@ public class StockAccountRepository {
 		try (FileReader fileReader = new FileReader(file)) {
 			JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
 			return jsonObject;
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -56,7 +54,6 @@ public class StockAccountRepository {
 			array = new JSONArray();
 			array = (JSONArray) jsonParser.parse(fileReader);
 			return array;
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
