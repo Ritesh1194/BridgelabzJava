@@ -6,7 +6,7 @@ import java.io.IOException;
  * 1. Purpose : Address Book Problem
  * 
  * @author : Ritesh Yadav
- * @version : 1.0
+ * @version : 1.2
  * @since : 02-12-2019
  *
  ******************************************************************************/
@@ -14,10 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
-import org.codehaus.jackson.annotate.JsonAnyGetter;
 import org.json.simple.JSONObject;
-
 import utility.Oops;
 import utility.Utility;
 
@@ -112,11 +109,18 @@ public class AddressBook {
 			System.out.println("Person of that name is not present");
 	}
 
+	/**
+	 * Function to edit the address of the person to be Updated
+	 * 
+	 * @param per
+	 *            ->Person
+	 * @return void
+	 */
 	public void editUpdate(Person per) {
 		do {
 			System.out.println("Enter the choice you want modify");
 
-			System.out.println("1:Contact Number  2:Address");
+			System.out.println("1. Contact Number  2.Address");
 			int choice = Utility.inputInteger();
 			switch (choice) {
 			case 1:

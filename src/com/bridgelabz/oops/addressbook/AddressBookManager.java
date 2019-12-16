@@ -5,7 +5,7 @@ package com.bridgelabz.oops.addressbook;
  * 1. Purpose : Address Book Problem
  * 
  * @author : Ritesh Yadav
- * @version : 1.0
+ * @version : 1.3
  * @since : 02-12-2019
  *
  ******************************************************************************/
@@ -25,6 +25,11 @@ public class AddressBookManager {
 	private AddressBook addressBook = null;
 	private static List<Person> listOfPersons = new ArrayList<Person>();
 
+	/**
+	 * Function to getBookName()
+	 * 
+	 * @return String
+	 */
 	public static String getBookName() {
 		return "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/" + book;
 	}
@@ -64,17 +69,21 @@ public class AddressBookManager {
 	public void openBook() throws IOException {
 		System.out.println("Files available are:");
 		File[] arrayOfFiles = getFiles();
+
 		for (File file : arrayOfFiles) {
 			if (file.getName().endsWith(".json"))
 				System.out.println(file.getName());
 		}
+
 		System.out.println("Choose the address book");
 		book = Utility.inputString();
+
 		for (File file : arrayOfFiles) {
 			String filename = file.getName();
 			if (book.equals(filename)) {
 				if (file.length() > 0) {
 					System.out.println("Address book is not empty");
+
 					String string = Oops.readJsonFile(filename);
 					listOfPersons = Oops.userReadValue(string, AddressBook.class);
 					addressBook();
