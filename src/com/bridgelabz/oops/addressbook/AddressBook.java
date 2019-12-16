@@ -46,6 +46,7 @@ public class AddressBook {
 		System.out.println("Enter first name");
 		person.setFirstName(Utility.inputString());
 		object1.put("firstName", person.getFirstName());
+
 		System.out.println("Enter last name");
 		person.setLastName(Utility.inputString());
 		object1.put("lastName", person.getLastName());
@@ -53,12 +54,15 @@ public class AddressBook {
 		System.out.println("Enter contact number");
 		person.setContactNo(Utility.inputLong());
 		object1.put("Contact Number", person.getContactNo());
+
 		person.setAddress(addressDetails());
+
 		Address address = person.getAddress();
 		object1.put("Street", address.getStreet());
 		object1.put("City", address.getCity());
 		object1.put("State", address.getState());
 		object1.put("Zip Code", address.getZipcode());
+
 		listOfPersons.add(person);
 		System.out.println("Person Added");
 	}
