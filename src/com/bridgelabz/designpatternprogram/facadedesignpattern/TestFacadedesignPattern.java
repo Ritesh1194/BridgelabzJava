@@ -18,8 +18,8 @@ public class TestFacadedesignPattern {
 	public static void main(String[] args) {
 		String tableName = "Employee";
 
-		Connection con = MySqlHelper.getMySqlDBConnection();
-		MySqlHelper mySqlHelper = new MySqlHelper();
+		Connection con = MysqlHelper.getMySqlDBConnection();
+		MysqlHelper mySqlHelper = new MysqlHelper();
 		mySqlHelper.generateMySqlHTMLReport(tableName, con);
 
 		Connection con1 = OracleHelper.getOracleDBConnection();
