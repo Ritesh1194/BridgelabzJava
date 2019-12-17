@@ -11,6 +11,7 @@ package com.bridgelabz.designpatternprogram.singleton;
 public class TestBillPughSingleton {
 
 	public static void main(String[] args) {
+		// Its a Singleton Object
 		BillPughSingleton billPughSingleton1 = BillPughSingleton.getInstance();
 		System.out.println(billPughSingleton1);
 

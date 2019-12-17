@@ -11,7 +11,8 @@ package com.bridgelabz.designpatternprogram.singleton;
 public class TestLazyInitializedSingleton {
 
 	public static void main(String[] args) {
-		LazyInitializedSingleton lazyInitializedSingleton =  LazyInitializedSingleton.getInstance();
+		// Its a Singleton Object
+		LazyInitializedSingleton lazyInitializedSingleton = LazyInitializedSingleton.getInstance();
 		System.out.println(lazyInitializedSingleton);
 	}
 }

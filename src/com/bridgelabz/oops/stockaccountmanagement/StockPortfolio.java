@@ -13,7 +13,7 @@ public class StockPortfolio {
 	 * @param numberOfShares
 	 *            - share count
 	 * @param price
-	 *            - price of each share
+	 *            - price of each share￼
 	 */
 	public StockPortfolio(String name, int numberOfShares, int price) {
 		this.name = name;

@@ -11,6 +11,7 @@ package com.bridgelabz.designpatternprogram.singleton;
 public class TestThreadSafeSingleton {
 
 	public static void main(String[] args) {
+		// Its a Singleton Object
 		ThreadSafeSingleton threadSafeSingleton = ThreadSafeSingleton.getInstance();
 		Thread thread1 = new Thread(threadSafeSingleton);
 		thread1.start();

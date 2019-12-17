@@ -11,6 +11,7 @@ package com.bridgelabz.designpatternprogram.singleton;
 public class TestEnumSingleton {
 
 	public static void main(String[] args) {
+		// Its a Singleton Object
 		EnumSingleton.doSomething(EnumSingleton.INSTANCE);
 	}
 }

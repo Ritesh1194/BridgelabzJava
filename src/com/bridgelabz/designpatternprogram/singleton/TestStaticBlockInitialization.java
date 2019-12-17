@@ -11,6 +11,7 @@ package com.bridgelabz.designpatternprogram.singleton;
 public class TestStaticBlockInitialization {
 
 	public static void main(String[] args) {
+		// Its a Singleton Object
 		StaticBlockInitialization staticBlockInitialization1 = StaticBlockInitialization.getInstance();
 		System.out.println(staticBlockInitialization1);
 	}
