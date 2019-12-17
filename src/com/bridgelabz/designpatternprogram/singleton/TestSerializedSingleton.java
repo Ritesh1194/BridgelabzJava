@@ -14,12 +14,12 @@ public class TestSerializedSingleton {
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
 		SerializedSingleton instanceOne = SerializedSingleton.getInstance();
 		ObjectOutput out = new ObjectOutputStream(
-				new FileOutputStream("G:\\Ritesh\\Bridgelabz-master\\src\\SerializableFile"));
+				new FileOutputStream("/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/SerializableFile"));
 		out.writeObject(instanceOne);
 		out.close();
 
 		ObjectInput in = new ObjectInputStream(
-				new FileInputStream("G:\\Ritesh\\Bridgelabz-master\\src\\SerializableFile"));
+				new FileInputStream("/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/SerializableFile"));
 		SerializedSingleton instanceTwo = (SerializedSingleton) in.readObject();
 		in.close();
 

@@ -1,4 +1,5 @@
 package com.bridgelabz.designpatternprogram.facadedesignpattern;
+
 /**
  * *****************************************************************************
  * 	2. Structural Design Patterns
@@ -14,16 +15,13 @@ import java.sql.Connection;
 
 public class OracleHelper {
 
-	public static Connection getOracleDBConnection(){
-		
+	public static Connection getOracleDBConnection() {
 		return null;
 	}
-	
-	public void generateOraclePDFReport(String tableName, Connection con){
-		
+
+	public void generateOraclePDFReport(String tableName, Connection con) {
 	}
-	
-	public void generateOracleHTMLReport(String tableName, Connection con){
-		
+
+	public void generateOracleHTMLReport(String tableName, Connection con) {
 	}
 }
