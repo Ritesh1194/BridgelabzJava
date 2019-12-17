@@ -15,6 +15,7 @@ package com.bridgelabz.designpatternprogram.proxydesignpattens;
 public class TestProxyDesignPattern {
 
 	public static void main(String[] args) {
+		// Creating Object
 		CommandExecutor executor = new CommandExecutorProxy("Ritesh", "yadav");
 		try {
 			executor.runCommand("ls ltr ");

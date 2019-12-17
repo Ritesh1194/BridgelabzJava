@@ -16,7 +16,13 @@ package com.bridgelabz.designpatternprogram.proxydesignpattens;
 import java.io.IOException;
 
 public class CommandExecutorImpl implements CommandExecutor {
-
+	/**
+	 * Define function runCommand()
+	 * 
+	 * @param cmd
+	 *            ->String
+	 * @return void
+	 */
 	@Override
 	public void runCommand(String cmd) throws IOException {
 		Runtime.getRuntime().exec(cmd);
