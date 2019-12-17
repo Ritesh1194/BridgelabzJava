@@ -1,4 +1,5 @@
 package com.bridgelabz.designpatternprogram.mediatordesignpattens;
+
 /*******************************************************************************
  * 3. Behavioural Design Patterns :- 
  * 2 .Mediator Design Pattern is very helpful
@@ -25,6 +26,15 @@ public class ChatMediatorImpl implements ChatMediator {
 		this.users = new ArrayList<User>();
 	}
 
+	/**
+	 * Define function sendMessage()
+	 * 
+	 * @param msg
+	 *            --> String
+	 * @param user
+	 *            --> User
+	 * @return void
+	 */
 	@Override
 	public void sendMessage(String msg, User user) {
 		for (User u : this.users) {
@@ -34,6 +44,13 @@ public class ChatMediatorImpl implements ChatMediator {
 		}
 	}
 
+	/**
+	 * Define function addUser()
+	 * 
+	 * @param user
+	 *            --> User
+	 * @return void
+	 */
 	@Override
 	public void adddUser(User user) {
 		this.users.add(user);

@@ -1,7 +1,7 @@
 package com.bridgelabz.designpatternprogram.mediatordesignpattens;
+
 /*******************************************************************************
- * 3. Behavioural Design Patterns :- 
- * 2 .Mediator Design Pattern is very helpful
+ * 3. Behavioural Design Patterns :- 2 .Mediator Design Pattern is very helpful
  * in an enterprise application where multiple objects are interacting with each
  * other. If the objects interact with each other directly, the system
  * components are tightly-coupled with each other that makes higher
@@ -22,12 +22,26 @@ public class UserImpl extends User {
 
 	}
 
+	/**
+	 * Define function send()
+	 * 
+	 * @param msg
+	 *            --> String
+	 * @return void
+	 */
 	@Override
 	public void send(String msg) {
 		System.out.println(this.name + " Sending Message : = " + msg);
 		mediator.sendMessage(msg, this);
 	}
 
+	/**
+	 * Define function revieve()
+	 * 
+	 * @param msg
+	 *            --> String
+	 * @return void
+	 */
 	@Override
 	public void receive(String msg) {
 		System.out.println(this.name + " Recieved Message : = " + msg);
