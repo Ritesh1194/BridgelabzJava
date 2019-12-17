@@ -22,7 +22,6 @@ public class ThreadSafeSingleton implements Runnable {
 					instance = new ThreadSafeSingleton();
 				}
 			}
-
 		}
 		return instance;
 	}

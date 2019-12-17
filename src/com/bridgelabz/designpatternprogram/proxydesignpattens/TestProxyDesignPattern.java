@@ -1,8 +1,7 @@
 package com.bridgelabz.designpatternprogram.proxydesignpattens;
 
 /*******************************************************************************
- * 1. Structural Design Patterns :- 
- * 3. Proxy design pattern as the name suggests
+ * 1. Structural Design Patterns :- 3. Proxy design pattern as the name suggests
  * creates a Proxy Object to a real Object so as to provide controlled access to
  * a functionality. Create a Command Executor Program that will execute certain
  * system commands based on the user type is admin or otherwise. The Proxy
@@ -16,9 +15,9 @@ package com.bridgelabz.designpatternprogram.proxydesignpattens;
 public class TestProxyDesignPattern {
 
 	public static void main(String[] args) {
-		CommandExecutor executor = new CommandExecutorProxy("Ritesh", "wrong password");
+		CommandExecutor executor = new CommandExecutorProxy("Ritesh", "yadav");
 		try {
-			executor.runCommand("ls- ltr");
+			executor.runCommand("ls ltr ");
 			executor.runCommand("rm -rf abc.pdf");
 		} catch (Exception e) {
 			e.printStackTrace();
