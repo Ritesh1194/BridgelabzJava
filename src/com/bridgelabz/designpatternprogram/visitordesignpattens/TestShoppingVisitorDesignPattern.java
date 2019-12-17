@@ -25,6 +25,13 @@ public class TestShoppingVisitorDesignPattern {
 		System.out.println("Total Cost = " + total);
 	}
 
+	/**
+	 * Define static function calculatePrice()
+	 * 
+	 * @param items
+	 *            -->ItemElements []
+	 * @return int
+	 */
 	private static int calculatePrice(ItemElement[] items) {
 		ShoppingCartVisitor visitor = new ShoppingCartVisitorImpl();
 		int sum = 0;

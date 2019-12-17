@@ -16,7 +16,13 @@ package com.bridgelabz.designpatternprogram.visitordesignpattens;
  *
  */
 public class ShoppingCartVisitorImpl implements ShoppingCartVisitor {
-
+	/**
+	 * Define function visit()
+	 * 
+	 * @param book
+	 *            --> Book
+	 * @return int
+	 */
 	@Override
 	public int visit(Book book) {
 		int cost = 0;
@@ -27,6 +33,14 @@ public class ShoppingCartVisitorImpl implements ShoppingCartVisitor {
 		System.out.println("Book ISBN::" + book.getIsbnNumber() + " cost =" + cost);
 		return cost;
 	}
+
+	/**
+	 * Define function visit()
+	 * 
+	 * @param fruit
+	 *            --> Fruit
+	 * @return int
+	 */
 
 	@Override
 	public int visit(Fruit fruit) {
