@@ -14,6 +14,7 @@ import java.util.List;
 public class Prototypedesignpattern {
 
 	public static void main(String[] args) {
+		// Creating Employees Object
 		Employees emps = new Employees();
 		emps.lodaData();
 		Employees empNew1 = (Employees) emps.clone();
