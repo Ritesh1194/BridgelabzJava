@@ -18,6 +18,7 @@ package com.bridgelabz.designpatternprogram.observerdesignpattens;
 public class TestObserverDesignPattern {
 
 	public static void main(String[] args) {
+		// Creating Object
 		MyTopic topic = new MyTopic();
 
 		Observer object1 = new MyTopicSubscriber("Object1");
