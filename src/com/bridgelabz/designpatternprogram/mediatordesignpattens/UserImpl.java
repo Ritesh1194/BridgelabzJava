@@ -16,7 +16,7 @@ package com.bridgelabz.designpatternprogram.mediatordesignpattens;
  *
  */
 public class UserImpl extends User {
-
+	// Constructor
 	public UserImpl(ChatMediator mediator, String name) {
 		super(mediator, name);
 

@@ -1,7 +1,7 @@
 package com.bridgelabz.designpatternprogram.mediatordesignpattens;
+
 /*******************************************************************************
- * 3. Behavioural Design Patterns :- 
- * 2 .Mediator Design Pattern is very helpful
+ * 3. Behavioural Design Patterns :- 2 .Mediator Design Pattern is very helpful
  * in an enterprise application where multiple objects are interacting with each
  * other. If the objects interact with each other directly, the system
  * components are tightly-coupled with each other that makes higher
@@ -19,6 +19,7 @@ public abstract class User {
 	protected ChatMediator mediator;
 	protected String name;
 
+	// Constructor
 	public User(ChatMediator mediator, String name) {
 		super();
 		this.mediator = mediator;

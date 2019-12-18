@@ -18,6 +18,7 @@ package com.bridgelabz.designpatternprogram.mediatordesignpattens;
 public class TestChatMediator {
 
 	public static void main(String[] args) {
+		// Creating New Object
 		ChatMediator mediator = new ChatMediatorImpl();
 		User user1 = new UserImpl(mediator, "Ritesh");
 		User user2 = new UserImpl(mediator, "Ravi");
