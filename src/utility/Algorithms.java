@@ -26,6 +26,11 @@ import com.bridgelabz.algorithms.UserDetails;
 
 public class Algorithms {
 
+	private static final String REGEX_NAME = "<<name>>";
+	private static final String REGEX_FULLNAME = "<<full name>> ";
+	private static final String REGEX_MOBILE_NO = "xxxxxxxxxx";
+	private static final String REGEX_DATE = "19/11/2019";
+
 	/**
 	 * Define static function swap()
 	 * 
@@ -95,7 +100,7 @@ public class Algorithms {
 	 *            --> Generic type <T>
 	 * @return void
 	 */
-	public static <T extends Comparable<T>> int binarySearchGeneric(T[] array, T key) {
+	public static <T extends Comparable> int binarySearchGeneric(T[] array, T key) {
 		int low = 0, high = array.length - 1;
 		int n = array.length;
 		bubbleSort(array, n);
@@ -122,7 +127,7 @@ public class Algorithms {
 	 *            --> int
 	 * @return void
 	 */
-	public static <T extends Comparable<T>> T[] bubbleSort(T[] array, int n) {
+	public static <T extends Comparable> T[] bubbleSort(T[] array, int n) {
 		T temp;
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n - 1; j++) {
@@ -372,7 +377,7 @@ public class Algorithms {
 	 * @param a
 	 *            --> E [] Generic Type
 	 */
-	public static <E extends Comparable<E>> void selectionSort(E[] a) {
+	public static <E extends Comparable> void selectionSort(E[] a) {
 		for (int i = 0; i < a.length - 1; i++) {
 			// find index of smallest element
 			int smallest = i;
@@ -417,18 +422,18 @@ public class Algorithms {
 	}
 
 	/**
-	 * Define Mesdsage Programs()
+	 * Define Message Programs
 	 * 
 	 */
-
-	private static final String REGEX_NAME = "<<name>>";
-	private static final String REGEX_FULLNAME = "<<full name>> ";
-	private static final String REGEX_MOBILE_NO = "xxxxxxxxxx";
-	private static final String REGEX_DATE = "19/11/2019";
 
 	static BufferedReader br;
 	BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
+	/**
+	 * Define function inputWord()
+	 * 
+	 * @return String
+	 */
 	public String inputWord() {
 		try {
 			return bufferedReader.readLine();

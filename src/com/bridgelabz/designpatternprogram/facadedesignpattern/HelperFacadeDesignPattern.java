@@ -18,8 +18,8 @@ public class HelperFacadeDesignPattern {
 		Connection con = null;
 		switch (dbType) {
 		case MYSQL:
-			con = MysqlHelper.getMySqlDBConnection();
-			MysqlHelper mySqlHelper = new MysqlHelper();
+			con = MySqlHelper.getMySqlDBConnection();
+			MySqlHelper mySqlHelper = new MySqlHelper();
 			switch (reportType) {
 			case HTML:
 				mySqlHelper.generateMySqlHTMLReport(tableName, con);

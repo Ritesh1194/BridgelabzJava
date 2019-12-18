@@ -15,7 +15,7 @@ import utility.Utility;
 
 public class StockAccount {
 	static StockAccountInterface accountService = new StockAccountManagementImpl();
-	static String path = "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/";
+	private static final String PATH = "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/";
 	static File file;
 
 	public static void main(String[] args) {
@@ -88,7 +88,7 @@ public class StockAccount {
 	}
 
 	/**
-	 * Define static function buyOrSellStock()
+	 * Define static functio￼n buyOrSellStock()
 	 * 
 	 * @param file2
 	 *            --> File

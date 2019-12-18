@@ -36,7 +36,6 @@ public class LogicalPrograms {
 		while (mListOfCupons.size() != numberOfCupons) {
 
 			int randomNumber = LogicalPrograms.randomNumberGenrator();
-			// System.out.print(randomNumber+" ");
 			if (mListOfCupons.contains(randomNumber)) {
 				mCounter++;
 			} else {

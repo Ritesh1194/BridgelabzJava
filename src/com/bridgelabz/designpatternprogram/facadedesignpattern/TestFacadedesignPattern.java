@@ -18,8 +18,8 @@ public class TestFacadedesignPattern {
 	public static void main(String[] args) {
 		String tableName = "Employee";
 
-		Connection con = MysqlHelper.getMySqlDBConnection();
-		MysqlHelper mySqlHelper = new MysqlHelper();
+		Connection con = MySqlHelper.getMySqlDBConnection();
+		MySqlHelper mySqlHelper = new MySqlHelper();
 		mySqlHelper.generateMySqlHTMLReport(tableName, con);
 
 		Connection con1 = OracleHelper.getOracleDBConnection();
@@ -30,5 +30,8 @@ public class TestFacadedesignPattern {
 				HelperFacadeDesignPattern.ReportTypes.HTML, tableName);
 		HelperFacadeDesignPattern.generateReport(HelperFacadeDesignPattern.DBTypes.ORACLE,
 				HelperFacadeDesignPattern.ReportTypes.PDF, tableName);
+
+		System.out.println(mySqlHelper);
+		System.out.println(oracleHelper);
 	}
 }
