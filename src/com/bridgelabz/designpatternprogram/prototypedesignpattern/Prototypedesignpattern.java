@@ -17,6 +17,7 @@ public class Prototypedesignpattern {
 		// Creating Employees Object
 		Employees emps = new Employees();
 		emps.lodaData();
+		// Cloning The Employees Objects
 		Employees empNew1 = (Employees) emps.clone();
 		Employees empNew2 = (Employees) emps.clone();
 
