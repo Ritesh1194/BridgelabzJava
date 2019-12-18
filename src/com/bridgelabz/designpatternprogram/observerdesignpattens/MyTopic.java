@@ -20,10 +20,18 @@ public class MyTopic implements Subject {
 	private boolean changed;
 	private final Object MUTEX = new Object();
 
+	// Constructor
 	public MyTopic() {
 		this.observers = new ArrayList<>();
 	}
 
+	/**
+	 * Define function register()
+	 * 
+	 * @param obj
+	 *            --> Observer
+	 * @return Void
+	 */
 	@Override
 	public void register(Observer obj) {
 		if (obj == null)
@@ -34,6 +42,11 @@ public class MyTopic implements Subject {
 		}
 	}
 
+	/**
+	 * Define function notifyObservers()
+	 * 
+	 * @return Void
+	 */
 	public void notifyObservers() {
 		List<Observer> observersLocal = null;
 		synchronized (MUTEX) {
@@ -47,6 +60,13 @@ public class MyTopic implements Subject {
 		}
 	}
 
+	/**
+	 * Define function unRegister()
+	 * 
+	 * @param obj
+	 *            --> Observer
+	 * @return Void
+	 */
 	@Override
 	public void unregister(Observer obj) {
 
@@ -60,10 +80,25 @@ public class MyTopic implements Subject {
 
 	}
 
+	/**
+	 * Define function getUpdate()
+	 * 
+	 * @param obj
+	 *            --> Observer
+	 * @return Object
+	 */
 	@Override
 	public Object getUpdate(Observer obj) {
 		return this.message;
 	}
+
+	/**
+	 * Define function postRegister()
+	 * 
+	 * @param msg
+	 *            --> String
+	 * @return Void
+	 */
 
 	public void postMessage(String msg) {
 		System.out.println("Message Posted to Topic " + msg);

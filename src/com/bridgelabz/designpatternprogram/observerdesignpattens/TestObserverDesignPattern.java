@@ -36,6 +36,5 @@ public class TestObserverDesignPattern {
 		object1.update();
 
 		topic.postMessage("New Message");
-
 	}
 }
