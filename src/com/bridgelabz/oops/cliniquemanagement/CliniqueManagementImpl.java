@@ -40,7 +40,6 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 	@SuppressWarnings("unchecked")
 	@Override
 	public void doctorDetails() {
-
 		jsonArray = CliniqueRepository.readData(doctor);
 
 		Doctor doctorDetails = new Doctor();
@@ -91,8 +90,6 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 	 */
 	@Override
 	public void readDoctorData(String key, String value, String choice) {
-
-		// adds json data to json array
 		jsonArray = (JSONArray) CliniqueRepository.readData(doctor);
 		// iterator to iterate json data
 		Iterator iterator = jsonArray.iterator();
@@ -295,15 +292,7 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 		jsonArray = CliniqueRepository.readData(patient);
 		Iterator iterator = jsonArray.iterator();
 		JSONObject jsonObject;
-		while (iterator.hasNext()) {/**
-									 * Define function patientDetailsNew()
-									 * 
-									 * @param patientId
-									 *            --> String
-									 * @param doctorId
-									 *            --> String
-									 * @return void
-									 */
+		while (iterator.hasNext()) {
 			if ((jsonObject = (JSONObject) iterator.next()).containsValue(value)) {
 				System.out.println("\nPatient Information :");
 				System.out.println("ID: " + jsonObject.get("Id") + "\t");

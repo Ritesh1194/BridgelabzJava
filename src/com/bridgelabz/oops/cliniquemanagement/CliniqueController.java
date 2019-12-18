@@ -96,7 +96,8 @@ public class CliniqueController {
 			System.out.print("Enter ID :");
 			service.readDoctorData("Id", Utility.inputString(), choice);
 			break;
-		case "3":
+		case "3/**\n" + "	 * Define function send()\n" + "	 * \n" + "	 * @param msg\n"
+				+ "	 *            --> String\n" + "	 * @return void\n" + "	 */":
 			System.out.print("Enter Speacialization :");
 			service.readDoctorData("Specialization", Utility.inputString(), choice);
 			break;

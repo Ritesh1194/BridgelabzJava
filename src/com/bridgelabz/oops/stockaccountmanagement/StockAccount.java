@@ -104,15 +104,17 @@ public class StockAccount {
 		String choice = Utility.inputString();
 		switch (choice) {
 		case "1":
-			System.out.println("Enter amount :\n Enter Symbol :");
+			System.out.println("Enter amount : ");
 			amount = Utility.inputDouble();
+			System.out.println("Enter Symbol : ");
 			symbol = Utility.inputString();
 			accountService.buyShare(amount, symbol, file2);
 			buyOrSellStock(file2);
 			break;
 		case "2":
-			System.out.println("Enter amount :\n Enter Symbol :");
+			System.out.println("Enter amount : ");
 			amount = Utility.inputDouble();
+			System.out.println("Enter Symbol : ");
 			symbol = Utility.inputString();
 			accountService.sellShare(amount, symbol, file2);
 			buyOrSellStock(file2);

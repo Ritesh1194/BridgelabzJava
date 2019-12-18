@@ -27,20 +27,6 @@ public class Doctor {
 	private String availability;
 	private long numberOfPatients;
 
-	public Doctor() {
-		super();
-	}
-
-	public Doctor(String doctorName, String doctorId, String specialization, String availability,
-			long numberOfPatients) {
-		super();
-		this.doctorName = doctorName;
-		this.doctorId = doctorId;
-		this.specialization = specialization;
-		this.availability = availability;
-		this.numberOfPatients = numberOfPatients;
-	}
-
 	public long getNumberOfPatients() {
 		return numberOfPatients;
 	}

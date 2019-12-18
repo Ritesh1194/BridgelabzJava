@@ -34,9 +34,9 @@ public class InventoryRepository {
 	 * 
 	 */
 	public static void writeData(JSONObject jsonFinalObject) {
-		File f = new File("/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/InventoryList.json");
+		File file = new File("/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/InventoryList.json");
 
-		try (FileWriter fileWriter = new FileWriter(f)) {
+		try (FileWriter fileWriter = new FileWriter(file)) {
 
 			fileWriter.write(jsonFinalObject.toJSONString());
 			System.out.println("Data is added to the file!!!");
@@ -53,7 +53,7 @@ public class InventoryRepository {
 	 */
 	public static JSONObject readData() {
 		JSONParser jsonParser = new JSONParser();
-		org.json.simple.JSONObject jsonObject = new JSONObject();
+		JSONObject jsonObject = new JSONObject();
 
 		try {
 			jsonObject = (JSONObject) jsonParser.parse(new FileReader(

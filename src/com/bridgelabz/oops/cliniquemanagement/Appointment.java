@@ -25,16 +25,6 @@ public class Appointment {
 	String Availibility;
 	String patientPhone;
 
-	public Appointment(String doctorName, int doctorId, String patientName, int patientId, String patientPhone,
-			String Availibility) {
-		this.doctorName = doctorName;
-		this.doctorId = doctorId;
-		this.patientName = patientName;
-		this.patientId = patientId;
-		this.Availibility = Availibility;
-		this.patientPhone = patientPhone;
-	}
-
 	public String getAvailibility() {
 		return Availibility;
 	}

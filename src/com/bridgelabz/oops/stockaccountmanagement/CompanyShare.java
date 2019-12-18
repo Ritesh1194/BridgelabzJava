@@ -55,4 +55,10 @@ public class CompanyShare {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	@Override
+	public String toString() {
+		return "CompanyShare [companyName=" + companyName + ", companySymbol=" + companySymbol + ", numberOfShare="
+				+ numberOfShare + ", price=" + price + ", dateTime=" + dateTime + "]";
+	}
 }

@@ -11,9 +11,8 @@ public class CompanyShareController {
 
 		System.out.println("Enter Company Name");
 		String cName = Utility.inputString();
-		if (Utility.isStringOnlyAlphabet(cName)) {
-
-		}
+		// if (Utility.isStringOnlyAlphabet(cName)) {
+		// }
 
 		System.out.println("Enter Company Symbol");
 		String symbol = Utility.inputString();

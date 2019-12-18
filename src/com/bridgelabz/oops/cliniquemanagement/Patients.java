@@ -21,18 +21,6 @@ public class Patients {
 	private long mobile;
 	private int age;
 
-	public Patients() {
-		super();
-	}
-
-	public Patients(String patientName, String id, long mobile, int age) {
-		super();
-		this.patientName = patientName;
-		this.id = id;
-		this.mobile = mobile;
-		this.age = age;
-	}
-
 	public String getPatientName() {
 		return patientName;
 	}

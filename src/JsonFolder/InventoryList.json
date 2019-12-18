@@ -1,1 +1,1 @@
-{"Inventory":{"Wheat":[{"price":0.0,"name":"Wheat","weight":0.0}],"Pulses":[],"Rice":[{"price":20.0,"name":"Basmati","weight":50.0},{"price":1000.0,"name":"lemon","weight":10.0},{"price":100.0,"name":"Zira","weight":2.0}]}}
+{"Inventory":{"Wheat":[{"price":0.0,"name":"Wheat","weight":0.0}],"Pulses":[],"Rice":[{"price":20.0,"name":"Basmati","weight":50.0},{"price":1000.0,"name":"lemon","weight":10.0},{"price":100.0,"name":"Zira","weight":2.0},{"price":1000.0,"name":"Basmati","weight":10.0}]}}

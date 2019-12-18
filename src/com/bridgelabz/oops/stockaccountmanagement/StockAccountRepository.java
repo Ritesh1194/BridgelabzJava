@@ -25,7 +25,6 @@ public class StockAccountRepository {
 	}
 
 	public static JSONObject readData(File file) {
-
 		try (FileReader fileReader = new FileReader(file)) {
 			JSONObject jsonObject = (JSONObject) jsonParser.parse(fileReader);
 			return jsonObject;

@@ -15,18 +15,6 @@ public class Person {
 	private long contactNo;
 	private Address address;
 
-	public Person() {
-		super();
-	}
-
-	public Person(String firstName, String lastName, long contactNo, Address address) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.contactNo = contactNo;
-		this.address = address;
-	}
-
 	public Address getAddress() {
 		return address;
 	}

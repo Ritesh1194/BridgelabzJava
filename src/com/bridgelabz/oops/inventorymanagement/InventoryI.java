@@ -1,4 +1,5 @@
 package com.bridgelabz.oops.inventorymanagement;
+
 /******************************************************************************
  * 
  * Purpose: Create a JSON file having Inventory Details for Rice, Pulses and
@@ -16,5 +17,4 @@ public interface InventoryI {
 	void inventryList();
 
 	void calculation(int selected);
-
 }

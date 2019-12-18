@@ -91,10 +91,10 @@ public class Oops {
 	 *            --> String
 	 * @return <T> void
 	 */
-	public static <T> void writeToFile(String filename, List<T> list) throws JsonMappingException, IOException {
-		String jsonString = userWriteValueAsString(list);
-		writeFile(jsonString, filename);
-	}
+//	public static <T> void writeToFile(String filename, List<T> list) throws JsonMappingException, IOException {
+//		String jsonString = userWriteValueAsString(list);
+//		writeFile(jsonString, filename);
+//	}
 
 	/**
 	 * Define static function deckQueueStore()
@@ -153,7 +153,7 @@ public class Oops {
 	 *            --> String
 	 * @return <T> List
 	 */
-	public static <T> List<T> userReadValue(String str, Class<?> clazz) throws JsonMappingException, IOException {
+	public static <T> List userReadValue(String str, Class<?> clazz) throws JsonMappingException, IOException {
 		CollectionType colletion = objectMapper.getTypeFactory().constructCollectionType(ArrayList.class, clazz);
 		return objectMapper.readValue(str, colletion);
 	}

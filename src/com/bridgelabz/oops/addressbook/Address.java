@@ -16,18 +16,6 @@ public class Address {
 	private String state;
 	private long zipcode;
 
-	public Address() {
-		super();
-	}
-
-	public Address(String street, String city, String state, long zipcode) {
-		super();
-		this.street = street;
-		this.city = city;
-		this.state = state;
-		this.zipcode = zipcode;
-	}
-
 	public String getStreet() {
 		return street;
 	}
