@@ -18,7 +18,7 @@ import utility.Utility;
 public class BinarySearchUsingFile {
 	public static void main(String[] args) throws IOException {
 		FileReader fr = new FileReader(
-				"/home/user/eclipse-workspace/BridgelabzPrograms/src/com/bridgelabz/algorithms/BinaryFile");
+				"/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/com/bridgelabz/algorithms/BinaryFile");
 		BufferedReader br = new BufferedReader(fr);
 		String str = "";
 		String delimitor = ",";

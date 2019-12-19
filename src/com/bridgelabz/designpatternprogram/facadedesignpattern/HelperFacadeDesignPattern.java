@@ -13,9 +13,11 @@ package com.bridgelabz.designpatternprogram.facadedesignpattern;
 import java.sql.*;
 
 public class HelperFacadeDesignPattern {
+	
 
 	public static void generateReport(DBTypes dbType, ReportTypes reportType, String tableName) {
 		Connection con = null;
+		
 		switch (dbType) {
 		case MYSQL:
 			con = MySqlHelper.getMySqlDBConnection();

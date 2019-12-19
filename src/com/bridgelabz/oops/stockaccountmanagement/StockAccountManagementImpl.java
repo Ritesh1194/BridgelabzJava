@@ -8,11 +8,19 @@ The StockAccount class also maintains a list of CompanyShares object which has S
  *
  ******************************************************************************/
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import com.bridgelabz.oops.addressbook.AddressBookManager;
+
+import utility.Oops;
+import utility.Utility;
 
 public class StockAccountManagementImpl implements StockAccountInterface {
 	String path = "/home/bridgelabz/Desktop/Ritesh/Bridgelabz-master/src/JsonFolder/CompanyList.json";
@@ -214,7 +222,32 @@ public class StockAccountManagementImpl implements StockAccountInterface {
 
 	@Override
 	public void removeCompanyDetails(String symbol) {
-		// JSONArray jsonArray = StockAccountRepository.readArrayData(file)
+		// JSONArray jsonArray = StockAccountRepository.readArrayData(file);
+		JSONObject object1 = new JSONObject();
+		JSONParser jsonParser = new JSONParser();
+		System.out.println("Enter the details of whom You To delete ");
+		System.out.println("Enter Symbol: ");
+		String symbol1 = Utility.inputString();
+		String filedata = null;
+		try {
+			filedata = Oops.readJsonFile(path);
+		} catch (IOException e) {
+		}
+		try {
+			object1 = (JSONObject) jsonParser.parse(filedata);
+		} catch (ParseException e) {
+		}
+
+		if (object1.containsKey(symbol1)) {
+			object1.remove(symbol1);
+			System.out.println("Data Deleted Successfully");
+		} else {
+			System.out.println("Symbol not Found");
+		}
+		try {
+			Oops.writeFile(object1.toString(), path);
+		} catch (IOException e) {
+		}
 	}
 
 	/**

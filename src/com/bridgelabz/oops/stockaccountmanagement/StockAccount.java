@@ -11,6 +11,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import com.bridgelabz.oops.addressbook.AddressBookMain;
+
 import utility.Utility;
 
 public class StockAccount {
@@ -54,7 +56,6 @@ public class StockAccount {
 				createAccount(name);
 				menu();
 				break;
-
 			default:
 				System.out.println("Invalid Option");
 				break;
@@ -98,6 +99,7 @@ public class StockAccount {
 		System.out.println("1. Buy Some Share ");
 		System.out.println("2. Sell some Share ");
 		System.out.println("3. Print Transaction ");
+		System.out.println("4. Go Back to main");
 		double amount;
 		String symbol;
 
@@ -123,6 +125,12 @@ public class StockAccount {
 			accountService.printTransactionDetails();
 			buyOrSellStock(file2);
 			break;
+		case "4":
+			System.out.println();
+			StockAccount.main(null);
+			break;
+		default:
+			System.out.println("Invalid Choice ");
 		}
 	}
 }

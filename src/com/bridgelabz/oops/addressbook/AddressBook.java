@@ -14,11 +14,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+
+import org.codehaus.jackson.JsonParser;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 import utility.Oops;
 import utility.Utility;
 
-public class AddressBook {
+public class AddressBook extends AddressAbstract {
 
 	/**
 	 * listOfpersons is the list of persons in a address book and is declared
@@ -205,23 +210,36 @@ public class AddressBook {
 
 	/**
 	 * Function to delete the person in a specified address book
+	 * 
+	 * @throws IOException
 	 */
 	public void deletePerson() {
+		JSONParser jsonParser = new JSONParser();
 		System.out.println("Enter the details of person to delete");
 		System.out.println("Enter First Name : ");
 		String firstName = Utility.inputString();
 		System.out.println("Enter Last Name  : ");
 		String lastName = Utility.inputString();
+		String filedata = null;
+		try {
+			filedata = Oops.readJsonFile(AddressBookManager.getBookName());
+		} catch (IOException e) {
+		}
+		try {
+			object1 = (JSONObject) jsonParser.parse(filedata);
+		} catch (ParseException e) {
+		}
 
-		if (!listOfPersons.isEmpty()) {
-			boolean isRemoved = listOfPersons.removeIf(
-					person -> firstName.equals(person.getFirstName()) && lastName.equals(person.getLastName()));
-			if (isRemoved)
-				System.out.println("The person has been deleted");
-			else
-				System.out.println("The person of that name does'nt exist");
-		} else
-			System.out.println("Address Book is empty!");
+		if (object1.containsValue(firstName) && object1.containsValue(lastName)) {
+			object1.clear();
+			System.out.println("Data Deleted Successfully");
+		} else {
+			System.out.println("Person not Found");
+		}
+		try {
+			Oops.writeFile(object1.toString(), AddressBookManager.getBookName());
+		} catch (IOException e) {
+		}
 	}
 
 	/**
