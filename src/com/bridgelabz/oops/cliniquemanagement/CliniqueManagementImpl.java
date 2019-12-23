@@ -152,15 +152,16 @@ public class CliniqueManagementImpl implements CliniqueInterface {
 
 			// adding one day to the localdate
 			LocalDate tomorrow = today.plusDays(1);
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-			String date = tomorrow.format(format);
+			// System.out.println(tomorrow);
+			// DateTimeFormatter format = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+			// String date = tomorrow.format(format);
 
 			String response = Utility.inputString().toString();
 			if (response.equals("y")) {
 				int count = 0;
 				patientId = Utility.patientId();
 				patientDetailsNew(patientId, doctorId);
-				appointment(patientId, doctorId, date);
+				appointment(patientId, doctorId, tomorrow.toString());
 
 			} else {
 				CliniqueController.menu();

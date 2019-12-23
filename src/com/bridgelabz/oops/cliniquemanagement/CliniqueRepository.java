@@ -46,7 +46,7 @@ public class CliniqueRepository {
 			jsonArray = (JSONArray) jsonParser.parse(fileReader);
 			return jsonArray;
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		}
 		return null;
 	}
