@@ -55,7 +55,7 @@ public class TestAdatorDesignPattern {
 		Volt v120 = getVolt(socketAdapter, 120);
 
 		System.out.println("V3 Volts Using TestObjectAdaptor " + v3.getVolts());
-		System.out.println("V3 Volts Using TestObjectAdaptor " + v12.getVolts());
+		System.out.println("V12 Volts Using TestObjectAdaptor " + v12.getVolts());
 		System.out.println("V3 Volts Using TestObjectAdaptor " + v120.getVolts());
 	}
 
