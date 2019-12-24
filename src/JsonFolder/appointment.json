@@ -1,1 +1,7 @@
-[{"DoctorId":"DOC989","PatientId":"PAT542","AppointmentDate":"23-12-2019"},{"DoctorId":"DOC989","PatientId":"PAT436","AppointmentDate":"23-12-2019"},[{"DoctorId":"DOC989","PatientId":"PAT542","AppointmentDate":"23-12-2019"},{"DoctorId":"DOC989","PatientId":"PAT436","AppointmentDate":"23-12-2019"},[{"DoctorId":"DOC989","PatientId":"PAT542","AppointmentDate":"23-12-2019"}]
+[
+  {
+	"DoctorId":"DOC989","PatientId":"PAT542","AppointmentDate":"23-12-2019"
+},		             
+ {
+  "DoctorId":"DOC989","PatientId":"PAT436","AppointmentDate":"23-12-2019"},[
+{"DoctorId":"DOC989","PatientId":"PAT542","AppointmentDate":"23-12-2019"},{"DoctorId":"DOC989","PatientId":"PAT436","AppointmentDate":"23-12-2019"},[{"DoctorId":"DOC989","PatientId":"PAT542","AppointmentDate":"23-12-2019"}]
